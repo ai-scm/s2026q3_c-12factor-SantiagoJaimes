@@ -4,6 +4,12 @@
 
 Elegí estos cuatro factores porque son los que ya nos han dado problemas reales en los ejercicios del semillero: el HOL1 (Lambda, S3, Glue y Athena), OpenSearch con Docker Compose y el diseño C4 del bot de dailies para MS Teams. Ese bot probablemente lo tendremos que implementar después.
 
+## Diagrama
+
+<img width="1662" height="1020" alt="Assignment_12factor_SantiagoJaimes drawio" src="https://github.com/user-attachments/assets/cde1ac5a-336a-4462-8412-be4b346cc842" />
+
+
+
 ## III. Configuración: guardarla en el entorno
 
 La configuración que cambia entre personas o entornos no debe estar escrita en el código. En el HOL1, cada uno tuvo que editar el código de la Lambda para poner el nombre de su carpeta, y los nombres de los buckets estaban fijos en el script. Si esos valores se leen de variables de entorno de la Lambda (`INPUT_BUCKET`, `OUTPUT_PREFIX`), el mismo código sirve para todo el equipo y para cualquier entorno. Lo mismo pasa con las credenciales `admin/admin` del `docker-compose.yml` de OpenSearch y con los tokens del bot de Teams: deben ir en un `.env` fuera del repositorio o en un gestor de secretos, nunca en GitHub.
